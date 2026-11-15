@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
   cacheComponents: true,
-  partialPrefetching: true,
+  // partialPrefetching: true,
   turbopack: {
     rules: {
       "*.css": {
@@ -12,6 +12,27 @@ const nextConfig: NextConfig = {
       },
     },
   },
+  // configure image 
+  images:{
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.shadcnblocks.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.dummyjson.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'encrypted-tbn0.gstatic.com',
+      },
+      {
+        protocol: 'https',
+        hostname: '**',
+      }
+    ]
+  }
 };
 
 export default nextConfig;
